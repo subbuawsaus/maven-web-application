@@ -17,9 +17,14 @@ node
             
     }
     stage("Deploy to Tomcat"){
+        if(isUnix()){
         sshagent(['f2e9d870-df0c-4c2c-a051-98f217a46a30']) {
             sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@3.17.186.35:/u01/app/Tomcat/apache-tomcat-9.0.53/webapps"
              }
+        }
+        else {
+            cp target\maven-web-application.war 
+        }
     }/*
     stage('Send Email'){
         emailext body: '''Build Over buddy and Success
