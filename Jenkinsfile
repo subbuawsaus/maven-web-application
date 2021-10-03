@@ -13,11 +13,12 @@ node
         sshagent(['f2e9d870-df0c-4c2c-a051-98f217a46a30']) {
             sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@3.17.186.35:/u01/app/Tomcat/apache-tomcat-9.0.53/webapps"
              }
-    }
+    }/*
     stage('Send Email'){
         emailext body: '''Build Over buddy and Success
 
 regards
 Subbu''', recipientProviders: [buildUser()], subject: 'Build Over', to: 'smptnpsc@gmail.com'
     }
+    */
 }
