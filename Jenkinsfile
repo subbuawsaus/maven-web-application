@@ -23,7 +23,7 @@ node
              }
         }
         else {
-            cp target/maven-web-application.war 
+            bat 'cp target\\maven-web-application.war "C:\\Subbu\\Study\\Mith\\DevOPS\\Tomcat\\apache-tomcat-9.0.53\\webapps"'
         }
     }/*
     stage('Send Email'){
