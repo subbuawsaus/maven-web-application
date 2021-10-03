@@ -7,7 +7,14 @@ node
     }
     stage('Build')
     {
+        if(isUnix()){
+            
        sh "$mavenHome/bin/mvn clean package"
+        }
+        else{
+            bat "mvn clean package"
+        }
+            
     }
     stage("Deploy to Tomcat"){
         sshagent(['f2e9d870-df0c-4c2c-a051-98f217a46a30']) {
