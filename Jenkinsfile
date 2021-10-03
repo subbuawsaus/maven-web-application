@@ -23,7 +23,7 @@ node
              }
         }
         else {
-            cp target\maven-web-application.war 
+            cp target/maven-web-application.war 
         }
     }/*
     stage('Send Email'){
